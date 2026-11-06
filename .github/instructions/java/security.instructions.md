@@ -7,6 +7,8 @@ description: "Java-specific security add-on for the generic security instruction
 
 > This file complements `.github/instructions/security.instructions.md`.
 > It only adds Java-specific guidance that is not already defined in the parent instructions.
+>
+> This file should also be used alongside `.github/instructions/java/development-rules.instructions.md` for safe validation, resource handling, and concurrency-aware security decisions.
 
 ## Java input validation
 

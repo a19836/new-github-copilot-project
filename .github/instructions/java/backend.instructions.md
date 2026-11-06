@@ -7,6 +7,8 @@ description: "Java-specific backend add-on for the generic backend instructions.
 
 > This file complements `.github/instructions/backend.instructions.md`.
 > It only adds Java-specific guidance that is not already defined in the parent instructions.
+>
+> This file is also intended to work alongside `.github/instructions/java/development-rules.instructions.md` for Java project quality, memory safety, and concurrency standards.
 
 ## Java-specific layering patterns
 
@@ -15,6 +17,7 @@ description: "Java-specific backend add-on for the generic backend instructions.
 - Keep persistence concerns inside repositories or data-access components.
 - Keep domain invariants in model/domain objects and service-layer validation.
 - Prefer constructor-based dependency injection and avoid field injection in new code.
+- Always keep the architecture aligned with the project’s bounded-context boundaries and avoid mixing unrelated domain logic in the same service.
 
 ## Java package and module conventions
 
@@ -41,6 +44,7 @@ Keep package boundaries aligned with the modular architecture and avoid mixing t
 - Keep API contracts explicit and backward-compatible when evolving models.
 - Translate domain or persistence exceptions into clear application exceptions at the boundary.
 - Validate the input at the API boundary and re-validate critical invariants in the service layer when needed.
+- Use clear request validation and normalization before the request reaches the service layer.
 
 ## Java transaction and configuration guidance
 
@@ -48,6 +52,7 @@ Keep package boundaries aligned with the modular architecture and avoid mixing t
 - Use read-only transactions for read-heavy operations.
 - Keep configuration, infrastructure wiring, and business logic separated.
 - Prefer explicit dependency injection over hidden framework lookups.
+- Keep repository and service responsibilities narrow and testable.
 
 ## Java design practices
 
@@ -55,3 +60,15 @@ Keep package boundaries aligned with the modular architecture and avoid mixing t
 - Split responsibilities across layers instead of combining transport, persistence, and business logic in one class.
 - Fail fast on invalid state and reject malformed input early.
 - Keep application exceptions meaningful, actionable, and stable across layers.
+- Use domain services and application services intentionally, not as generic containers for unrelated logic.
+- Ensure concurrency and resource choices follow the standards in `.github/instructions/java/development-rules.instructions.md`.
+
+## Required Java backend review checks
+
+Before finalizing a Java backend change, confirm:
+
+- the layer boundaries remain correct
+- repositories are not used directly from controllers
+- services own business invariants and transactional behavior
+- validation happens at the boundary and not only deep in the domain
+- data structure, concurrency, and memory choices remain consistent with the Java development rules

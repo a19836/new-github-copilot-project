@@ -7,6 +7,8 @@ description: "Java-specific testing add-on for the generic testing instructions.
 
 > This file complements `.github/instructions/testing.instructions.md`.
 > It is not a replacement for the generic testing instructions and should only add Java-specific guidance.
+>
+> This file should also be reviewed with `.github/instructions/java/development-rules.instructions.md` when testing concurrency, race conditions, memory-sensitive paths, or performance-critical Java logic.
 
 ## Java testing strategy
 
