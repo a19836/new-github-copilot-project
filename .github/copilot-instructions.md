@@ -50,6 +50,28 @@ infra/                # optional
 - Add or update tests for behavior changes.
 - Keep changes small, cohesive, and reversible.
 - Prefer secure defaults and explicit validation.
+- Before writing code, identify the actual scope: affected callers, tests, configs, and data flows.
+- Prefer the smallest solution that fully works; avoid feature creep and speculative abstractions.
+- Reuse existing project patterns, helpers, and platform capabilities before adding custom wrappers, dependencies, or boilerplate.
+- Do not cut safety, validation, security, or user-visible correctness in the name of being “minimal.”
+- When a deliberate compromise is accepted, document it with a clear `shortcut: <ceiling>, <upgrade path>` comment so the tradeoff is visible and reviewable.
+
+## Lean Delivery and YAGNI
+
+- Prefer the smallest change that fully solves the task.
+- Reuse existing project patterns, helpers, and platform features before introducing abstractions, custom wrappers, or new dependencies.
+- Avoid speculative features, bloated configuration, and "for later" code that is not required by the current task.
+- Keep values and interfaces aligned with the platform or project conventions already in place.
+- Keep the implementation understandable to a busy human in one read.
+- Prefer deletion and simplification over adding extra code.
+
+## Execution and review mindset
+
+- Read the task and the code it touches before writing.
+- Trace the real behavior end-to-end instead of only looking at the local diff.
+- A change can break code it does not directly edit; check callers and shared behavior before finalizing.
+- Favor correctness, safety, and maintainability over style preferences or unnecessary optimization.
+- If a shortcut is intentional, mark it with a clear limit and a revisit path.
 
 ## Commit Convention
 

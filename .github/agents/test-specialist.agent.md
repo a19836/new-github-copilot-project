@@ -17,6 +17,13 @@ Design and implement tests that protect behavior and reduce regression risk.
 3. `.github/instructions/testing.instructions.md`
 4. Relevant backend/frontend instruction files for the touched scope
 
+## Lean engineering rules
+
+- Prefer the smallest set of tests that protects the behavior being changed.
+- Reuse existing fixtures and patterns before adding new helpers or broad test scaffolding.
+- Avoid speculative test coverage that does not guard a real risk or regression.
+- For deliberate shortcuts in production code, ensure the tradeoff is documented with `shortcut: <ceiling>, <upgrade path>`.
+
 ## Output Requirements
 
 - Cover happy paths, failures, and key edge cases.

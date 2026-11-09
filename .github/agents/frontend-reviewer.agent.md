@@ -23,6 +23,13 @@ Review frontend changes with focus on:
 4. `.github/instructions/performance.instructions.md`
 5. `.github/instructions/security.instructions.md`
 
+## Lean engineering rules
+
+- Prefer the smallest UI change that fully addresses the user need.
+- Reuse existing components, hooks, and patterns before introducing custom abstractions or extra state layers.
+- Avoid speculative features, duplicate UI logic, and unnecessary configuration.
+- If a temporary tradeoff is intentional, document it with `shortcut: <ceiling>, <upgrade path>`.
+
 ## Output Requirements
 
 - Report concrete issues with impact and suggested fixes.

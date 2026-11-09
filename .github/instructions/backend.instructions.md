@@ -46,6 +46,14 @@ services/<service-name>/modules/<domain>/
 - Avoid leaking query/persistence details outside service layer.
 - Prefer pagination and filtering over unbounded `findAll`.
 
+## Simplicity and minimal-change rules
+
+- Prefer the smallest backend change that fully solves the user problem.
+- Reuse existing domain services, patterns, and framework conventions before adding new abstractions or extra layers.
+- Avoid speculative features, optional configuration, or wrapper code that does not directly support the current use case.
+- Reuse established framework or standard library capabilities before introducing custom implementations.
+- If a short-lived compromise is required, document it with `shortcut: <ceiling>, <upgrade path>` so it remains explicit and reviewable.
+
 ## Microservice Boundaries
 
 - One service owns one bounded context and its data model.

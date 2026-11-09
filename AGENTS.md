@@ -47,6 +47,13 @@ modules/<domain>/
 | React add-ons | [.github/instructions/react](.github/instructions/react) |
 | Python backend add-ons | [.github/instructions/python](.github/instructions/python) |
 
+## Rule hierarchy
+
+- `.github/copilot-instructions.md` is the shared source of truth for project-wide defaults.
+- `.github/instructions/*.md` add topic-specific guardrails and are additive, not duplicates.
+- `.github/agents/*.agent.md` add role-specific review behavior and output expectations, not repeated project-wide rules.
+- Language-specific folders extend these rules only when the stack or framework requires additional guidance.
+
 ## Specialized Agents
 
 | Agent | Use for |
