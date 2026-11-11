@@ -36,6 +36,7 @@ modules/<domain>/
 | Domain | File |
 |---|---|
 | Global project rules | [.github/copilot-instructions.md](.github/copilot-instructions.md) |
+| Architecture baseline | [.github/instructions/architecture.instructions.md](.github/instructions/architecture.instructions.md) |
 | Backend layering and interface rules | [.github/instructions/backend.instructions.md](.github/instructions/backend.instructions.md) |
 | Frontend and micro-UI rules | [.github/instructions/frontend.instructions.md](.github/instructions/frontend.instructions.md) |
 | Database and migration rules | [.github/instructions/database.instructions.md](.github/instructions/database.instructions.md) |

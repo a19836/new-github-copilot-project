@@ -88,6 +88,7 @@ Examples:
 
 ## Instruction Files
 
+- Architecture baseline: `.github/instructions/architecture.instructions.md`
 - Backend rules: `.github/instructions/backend.instructions.md`
 - Frontend rules: `.github/instructions/frontend.instructions.md`
 - Database rules: `.github/instructions/database.instructions.md`

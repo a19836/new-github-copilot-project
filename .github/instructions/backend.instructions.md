@@ -5,6 +5,8 @@ description: "Generic backend conventions for layered modules and distributed se
 
 # Backend Conventions
 
+> This file should be read together with `.github/instructions/architecture.instructions.md` for the language-agnostic hexagonal architecture baseline and `.github/instructions/java/architecture.instructions.md` when the project is a Java/Spring Boot service.
+
 ## Layering Rules (mandatory)
 
 - `controller`/`interface` layer depends on `service` only.
@@ -53,6 +55,12 @@ services/<service-name>/modules/<domain>/
 - Avoid speculative features, optional configuration, or wrapper code that does not directly support the current use case.
 - Reuse established framework or standard library capabilities before introducing custom implementations.
 - If a short-lived compromise is required, document it with `shortcut: <ceiling>, <upgrade path>` so it remains explicit and reviewable.
+
+## Architecture baseline
+
+- Follow `.github/instructions/architecture.instructions.md` as the default language-agnostic architecture standard.
+- For Java/Spring Boot projects, also follow `.github/instructions/java/architecture.instructions.md` for the concrete hexagonal architecture expectations.
+- Keep the application/service layer independent from transport and persistence implementations.
 
 ## Microservice Boundaries
 

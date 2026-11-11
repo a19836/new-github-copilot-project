@@ -8,16 +8,17 @@ description: "Java-specific backend add-on for the generic backend instructions.
 > This file complements `.github/instructions/backend.instructions.md`.
 > It only adds Java-specific guidance that is not already defined in the parent instructions.
 >
-> This file is also intended to work alongside `.github/instructions/java/development-rules.instructions.md` for Java project quality, memory safety, and concurrency standards.
+> This file is also intended to work alongside `.github/instructions/java/architecture.instructions.md` for the required hexagonal architecture boundaries and `.github/instructions/java/development-rules.instructions.md` for Java project quality, memory safety, and concurrency standards.
 
 ## Java-specific layering patterns
 
 - Keep endpoint/controller classes focused on HTTP transport concerns only.
-- Put business logic in service or use-case classes.
-- Keep persistence concerns inside repositories or data-access components.
+- Put business logic in application services or domain services, not in controllers.
+- Keep persistence concerns inside repositories or data-access adapters.
 - Keep domain invariants in model/domain objects and service-layer validation.
 - Prefer constructor-based dependency injection and avoid field injection in new code.
 - Always keep the architecture aligned with the project’s bounded-context boundaries and avoid mixing unrelated domain logic in the same service.
+- Follow `.github/instructions/java/architecture.instructions.md` as the architectural source of truth for hexagonal structure, ports, adapters, and dependency direction.
 
 ## Java package and module conventions
 
@@ -71,4 +72,5 @@ Before finalizing a Java backend change, confirm:
 - repositories are not used directly from controllers
 - services own business invariants and transactional behavior
 - validation happens at the boundary and not only deep in the domain
+- hexagonal architecture is preserved: ports and adapters remain separated from business logic
 - data structure, concurrency, and memory choices remain consistent with the Java development rules
